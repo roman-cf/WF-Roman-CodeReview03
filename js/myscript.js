@@ -1,5 +1,6 @@
 //-----------------------------------at-the-beginning-----------------------------------------------------
 var moviedata = movieJson;
+document.getElementById("sorter").addEventListener("click",firstSort,false);
 window.onload = movieBoxBuilder();
 
 
@@ -86,7 +87,7 @@ function Liker(e){
 //--ENDE------------------------------Like-Counter------------------------------
 
 //--------------------------------Sort Function----------------------------------
-function myFirstSort() {
+function firstSort() {
 	moviedata.sort(function(a, b){
 		return a.likes-b.likes
 	});
