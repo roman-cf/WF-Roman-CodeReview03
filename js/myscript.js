@@ -1,73 +1,89 @@
+//-----------------------------------at-the-beginning-----------------------------------------------------
 var moviedata = movieJson;
-
 window.onload = movieBoxBuilder();
 
- // ---------------------------------MovieBox Builder------------------------------------------------------
+
+// ---------------------------------MovieBox Builder------------------------------------------------------
 function movieBoxBuilder(){
 
 	for (var i=1; i < moviedata.length; i++){
 
+		var thisID = moviedata[i].movieID;
+
 		let mBox = document.createElement("div");
 			mBox.className = "moviebox";
-			mBox.id = "mBox"+ i;
+			mBox.id = "mBox"+ thisID;
 			document.getElementById("movielist").appendChild(mBox);
 
 			let mImg = document.createElement("img");
 				mImg.className = "mPic";
 				mImg.src = "./img/" + moviedata[i].picurl;
-				document.getElementById("mBox"+i).appendChild(mImg);
+				document.getElementById("mBox"+thisID).appendChild(mImg);
 
 			let mTitle = document.createElement("p");
 				mTitle.className = "movieTitle";
-				mTitle.id = "mTitle"+i;
+				mTitle.id = "mTitle"+thisID;
 				mTitle.textContent = moviedata[i].title;
-				document.getElementById("mBox"+i).appendChild(mTitle);
+				document.getElementById("mBox"+thisID).appendChild(mTitle);
 
 			let mDscrptn = document.createElement("p");
 				mDscrptn.className = "movieDscrptn";
-				mDscrptn.id = "mDscrptn"+i;
+				mDscrptn.id = "mDscrptn"+thisID;
 				mDscrptn.textContent = moviedata[i].dscrptn;
-				document.getElementById("mBox"+i).appendChild(mDscrptn);
+				document.getElementById("mBox"+thisID).appendChild(mDscrptn);
 
 			let lBox = document.createElement("div");
 				lBox.className = "likeBox";
-				lBox.id = "lBox"+i;
-				document.getElementById("mBox"+i).appendChild(lBox);
+				lBox.id = "lBox"+thisID;
+				document.getElementById("mBox"+thisID).appendChild(lBox);
 
 				let liKes = document.createElement("p");
 					liKes.className = "liKes";
-					liKes.id = "liKes"+i;
+					liKes.id = "liKes"+thisID;
 					liKes.textContent = "Like ";
 					liKes.addEventListener("click", function(e){
 						Liker(e.target.id);			
 					});
-					document.getElementById("lBox"+i).appendChild(liKes);
+					document.getElementById("lBox"+thisID).appendChild(liKes);
 
 					let thumbUp = document.createElement("i");
 						thumbUp.className = "fa fa-thumbs-up";
-						thumbUp.id = "liKes"+i;
-						document.getElementById("liKes"+i).appendChild(thumbUp);
+						thumbUp.id = "liKes"+thisID;
+						document.getElementById("liKes"+thisID).appendChild(thumbUp);
 
 				let likeO = document.createElement("div");
 					likeO.className = "likeO";
-					likeO.id = "likeO"+i;
+					likeO.id = "likeO"+thisID;
 					likeO.textContent = moviedata[i].likes;
-					document.getElementById("lBox"+i).appendChild(likeO);
+					document.getElementById("lBox"+thisID).appendChild(likeO);
 
 	} 
 }// ---------------------------------End of MovieBox Builder------------------------------------------------------
 
-// ab hier noch test
+//-------------------------------Search-Function-for-Database-------------------
+function positionFinder(array, attr, value) {
+    for(var i = 0; i < array.length; i ++) {
+        if(array[i][attr] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+//--ENDE------------------------Search-Function-Database-----------------------
 
+//--------------------------------Like-Counter---------------------------------
 function Liker(e){
 	btnId = Number(e.slice(5));
-	var likes = moviedata[btnId].likes +1;
-	moviedata[btnId].likes =  likes;
-	document.getElementById("likeO"+btnId).innerHTML = likes;
-	//console.log(btnId);
-	test();
-}
 
+	var movieIdLocal = positionFinder(moviedata,"movieID",btnId);
+	var likes = moviedata[movieIdLocal].likes + 1;
+	
+	document.getElementById("likeO"+btnId).innerHTML = likes;
+	moviedata[movieIdLocal].likes = likes;
+}
+//--ENDE------------------------------Like-Counter------------------------------
+
+// ab hier noch test
 var testvar="genre";
 
 function test(testvar){

@@ -1,4 +1,5 @@
 var movieJson = [{
+	"movieID" : "movieID",
 	"title": "movie title",
 	"dscrptn" : "description",
 	"genre": "genre",
@@ -7,6 +8,7 @@ var movieJson = [{
 	"likes" : 10
 },
 {
+	"movieID" : 1,
 	"title": "DEM HORIZONT SO NAH",
 	"dscrptn" : "Regisseur Tim Trachte erzählt eine wahre und zutiefst bewegende Liebesgeschichte über Mut, Vertrauen und die Kraft loszulassen.",
 	"genre": "Drama",
@@ -16,6 +18,7 @@ var movieJson = [{
 
 },
 {
+	"movieID" : 2,
 	"title": "DEUTSCHSTUNDE",
 	"dscrptn" : "'Deutschstunde' bietet zeitlosen Kinostoff: zwei Freunde werden erbitterte Feinde – und zwischen ihnen steht ein elfjähriger Junge, der von beiden geliebt werden will.",
 	"genre": "Drama",
@@ -24,6 +27,7 @@ var movieJson = [{
 	"likes" : 10
 },
 {
+	"movieID" : 3,
 	"title": "LEBERKÄSJUNKIE",
 	"dscrptn" : "„Viel Gemüse und keine Leberkässemmeln mehr!“ heißt es diesmal für den Cholesterin-geplagten Franz Eberhofer. Der bayerische Provinzpolizist versucht den Spagat zwischen Kleinkindbetreuung und Kriminalistik.",
 	"genre": "Krimi",
@@ -32,6 +36,7 @@ var movieJson = [{
 	"likes" : 10
 },
 {
+	"movieID" : 4,
 	"title": "BENJAMIN BLÜMCHEN",
 	"dscrptn" : "Benjamin Blümchen und sein bester Freund Otto bekommen es mit der gewieften Zora Zack zu tun und müssen tief in die Trickkiste greifen, um den Zoo zu retten.",
 	"genre": "Abenteuer",
