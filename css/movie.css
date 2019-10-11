@@ -1,0 +1,144 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: "PT Sans Narrow", verdana, sans-serif;
+	color: white;
+	background-color: #171E24;
+}
+a:link, a:hover, a:visited {
+	color: white;
+	font-size: 2em;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+h2{
+	margin: 0;
+}
+header{
+	background-color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav{
+	background-color: #414141;
+
+}
+nav ul {
+	margin: 0; }
+
+nav li, #footernav li {
+	display: inline;
+	padding-right: 1em; }
+.logo {
+	display: flex;
+	margin:  2vh auto;
+	font-family: Verdana, sans-serif;
+	font-weight: 800; }
+
+.logotext {
+	padding-top: 0.4em;
+	padding-right: 0.1em;
+	font-size: 1.6em; 
+	color: white;
+}
+
+.logoMF{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.7em;
+	height: 1.7em;
+	background-color: #bf2524;
+	color: white;
+	border-radius: 50%;
+	font-size: 2em; 
+}
+main{
+	background-color: #171E24;
+	max-width: 1081px;
+	margin:  0 auto;
+}
+.top{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end ;
+	padding: 1vh 0;
+}
+#ropdown{
+	background-color: #171E24;
+	color: grey;
+	font-size: 2em;
+	border: none;
+}
+#movielist{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.moviebox{
+	background-color: black;
+	width: 30em;
+	margin: 1em;
+	padding: 1vh;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 0.5fr 1fr 0.5fr;
+	grid-template-areas: "mPic movieTitle" "mPic movieDscrptn" "mPic likeBox";
+}
+.moviebox p{
+	margin: 0;
+}
+.mPic{
+	grid-area: mPic;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.movieTitle{
+	grid-area: movieTitle;
+	padding-left: 2vw;
+	font-size: 2em;
+	font-weight: bold;
+}
+.movieDscrptn{
+	padding-left: 2vw;
+	grid-area: movieDscrptn;
+	font-size: 1em;
+}
+.likeBox{
+	grid-area: likeBox;
+	display: flex;
+	justify-content: flex-end;
+}
+.liKes{
+	color: #4da43c;
+	text-align: center;
+	padding-top: 0.6em;
+	padding-right: 2vw;
+	font-size: 2em;
+	cursor: pointer;
+}
+.likeO{	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2em;
+	height: 2em;
+	background-color: #4da43c;
+	color: white;
+	border-radius: 50%;
+	font-size: 2.7em; 
+}
+
+footer {
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+	font-size: 1.5em;
+}
+/*---------------------------------------------------------------------*/

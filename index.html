@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie Factory</title>
+	<link rel="stylesheet" href="./css/movie.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<div class="logotext">Movie Factory</div>
+			<div class="logoMF"><p>MF</p></div>	
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html" title="Home">Home</a></li>
+			<li><a href="#" title="Team">about</a></li>
+			<li><a href="#" title="Team">more...</a></li>
+		</ul>
+	</nav>
+	<main>
+		<div class="top">
+			<h2>Movies</h2>		
+			<select id="dropdown" name="sort" value="sort">
+				<option value="0">sort</option>
+				<option value="0">genre2</option>
+				<option value="0">genre3</option>
+		
+			</select>
+		</div>
+		<div id="movielist"></div>
+	</main>
+	<footer>
+		<div class="copy">Copyright &copy; Roman - Movie Factory 2019</div>
+	</footer>
+	
+	<script src="./db/moviedata.json" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="./js/myscript.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+var movieJson = [{
+	"title": "movie title",
+	"dscrptn" : "description",
+	"genre": "genre",
+	"seen": "already seen",
+	"picurl" : "pic",
+	"likes" : 10
+},
+{
+	"title": "DEM HORIZONT SO NAH",
+	"dscrptn" : "Regisseur Tim Trachte erzählt eine wahre und zutiefst bewegende Liebesgeschichte über Mut, Vertrauen und die Kraft loszulassen.",
+	"genre": "Drama",
+	"seen": false,
+	"picurl" : "DemHorizontSoNah_HauptplakatNEU_EU_223x324.jpg"	,
+	"likes" : 10
+
+},
+{
+	"title": "DEUTSCHSTUNDE",
+	"dscrptn" : "'Deutschstunde' bietet zeitlosen Kinostoff: zwei Freunde werden erbitterte Feinde – und zwischen ihnen steht ein elfjähriger Junge, der von beiden geliebt werden will.",
+	"genre": "Drama",
+	"seen": false,
+	"picurl" : "Deutschstunde_Hauptplakat_223x324.jpg",
+	"likes" : 10
+},
+{
+	"title": "LEBERKÄSJUNKIE",
+	"dscrptn" : "„Viel Gemüse und keine Leberkässemmeln mehr!“ heißt es diesmal für den Cholesterin-geplagten Franz Eberhofer. Der bayerische Provinzpolizist versucht den Spagat zwischen Kleinkindbetreuung und Kriminalistik.",
+	"genre": "Krimi",
+	"seen": false,
+	"picurl" : "Leberkaesjunkie_Hauptplakat_223x324.jpg",
+	"likes" : 10
+},
+{
+	"title": "BENJAMIN BLÜMCHEN",
+	"dscrptn" : "Benjamin Blümchen und sein bester Freund Otto bekommen es mit der gewieften Zora Zack zu tun und müssen tief in die Trickkiste greifen, um den Zoo zu retten.",
+	"genre": "Abenteuer",
+	"seen": false,
+	"picurl" : "BenjaminBluemchen_Hauptplakat_223x324.jpg",
+	"likes" : 10
+}
+
+
+
+
+]
