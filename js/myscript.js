@@ -5,6 +5,8 @@ window.onload = movieBoxBuilder();
 
 // ---------------------------------MovieBox Builder------------------------------------------------------
 function movieBoxBuilder(){
+	const myNode = document.getElementById("movielist");
+	myNode.innerHTML = ''
 
 	for (var i=1; i < moviedata.length; i++){
 
@@ -79,11 +81,27 @@ function Liker(e){
 	var likes = moviedata[movieIdLocal].likes + 1;
 	
 	document.getElementById("likeO"+btnId).innerHTML = likes;
-	moviedata[movieIdLocal].likes = likes;
+	moviedata[movieIdLocal].likes = likes;	
 }
 //--ENDE------------------------------Like-Counter------------------------------
 
+//--------------------------------Sort Function----------------------------------
+function myFirstSort() {
+	moviedata.sort(function(a, b){
+		return a.likes-b.likes
+	});
+	movieBoxBuilder();
+}
+//--ENDE------------------------------Sort Function-------------------------------
+
+
+
+
 // ab hier noch test
+
+
+
+//----------------------
 var testvar="genre";
 
 function test(testvar){
