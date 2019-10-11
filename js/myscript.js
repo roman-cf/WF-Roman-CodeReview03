@@ -10,7 +10,7 @@ function movieBoxBuilder(){
 
 	for (var i=1; i < moviedata.length; i++){
 
-		var thisID = moviedata[i].movieID;
+		var thisID = moviedata[i].movieID; //for later usage its important to have an unique id to hold the value of likes after sorting an refresh the site
 
 		let mBox = document.createElement("div");
 			mBox.className = "moviebox";
@@ -93,23 +93,3 @@ function myFirstSort() {
 	movieBoxBuilder();
 }
 //--ENDE------------------------------Sort Function-------------------------------
-
-
-
-
-// ab hier noch test
-
-
-
-//----------------------
-var testvar="genre";
-
-function test(testvar){
-
-	for (testvar in moviedata){
-		if (moviedata[testvar] == "Abenteuer"){
-		console.log(moviedata[testvar]);
-		}
-	}
-
-}

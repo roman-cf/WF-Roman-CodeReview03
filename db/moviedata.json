@@ -43,6 +43,24 @@ var movieJson = [{
 	"seen": false,
 	"picurl" : "BenjaminBluemchen_Hauptplakat_223x324.jpg",
 	"likes" : 10
+},
+{
+	"movieID" : 5,
+	"title": "UGLYDOLLS",
+	"dscrptn" : "Mit UglyDolls bringt Animationsspezialist Kelly Asbury die gleichnamigen Plüschpuppen in die Kinos. Die herzerwärmende Botschaft lautet: Sei einfach du selbst!",
+	"genre": "Abenteuer",
+	"seen": false,
+	"picurl" : "UglyDolls_HauptplakatNEU_223x324.jpg",
+	"likes" : 10
+},
+{
+	"movieID" : 6,
+	"title": "DER KÖNIG DER LÖWEN",
+	"dscrptn" : "Jon Favreau inszenierte eines der bekanntesten und beliebtesten Disney-Abenteuer spektakulär als bildgewaltiges Live-Action-Kino mit atemberaubenden visuellen Effekten.",
+	"genre": "Abenteuer",
+	"seen": false,
+	"picurl" : "DerKoenigDerLoewen_HauptplakatNEU_223x324.jpg",
+	"likes" : 10
 }
 
 

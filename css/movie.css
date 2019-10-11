@@ -14,7 +14,8 @@ a:hover{
 	text-decoration: underline;
 }
 h2{
-	margin: 0 auto;
+	margin: 0;
+	margin-left: 44%;
 }
 header{
 	background-color: black;
@@ -63,10 +64,10 @@ main{
 }
 .top{
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-end ;
+	justify-content: flex-end;
 	padding: 1vh 0;
 }
+
 #ropdown{
 	background-color: #171E24;
 	color: grey;
