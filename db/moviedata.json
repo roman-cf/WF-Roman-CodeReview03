@@ -2,7 +2,7 @@ var movieJson = [{
 	"movieID" : "movieID",
 	"title": "movie title",
 	"dscrptn" : "description",
-	"genre": "genre",
+	"genre": "Genre",
 	"seen": "already seen",
 	"picurl" : "pic",
 	"likes" : 10

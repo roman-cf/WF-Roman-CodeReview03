@@ -1,18 +1,30 @@
 //-----------------------------------at-the-beginning-----------------------------------------------------
 var moviedata = movieJson;
-var strGenre = "all";
+var strGenre = "Genre";
 selectOptionValues();
 
 	//-------------------------------------Genre-Selctor-creating------------------------------------------------
-	var arrSelect = [["all","Abenteuer","Drama","Krimi"],["Genre","Abenteuer","Drama","Krimi"]];
+	function selectOptionValues(){
+	arrSelect = ["Genre"];
+
+		for(var i=0; i < moviedata.length; i ++){
+			var check = moviedata[i].genre;
+			
+			if(! arrSelect.includes(check)){
+			arrSelect.push(check);
+			}
+		}
+				console.log(arrSelect);
+	}
+	//	var arrSelect = ["Genre","Abenteuer","Drama","Krimi"];
 	let dropDown = document.createElement("select");
 		dropDown.id = "sorter2";
 		dropDown.addEventListener("change",genreSort,false);
 		document.getElementsByTagName("nav")[0].appendChild(dropDown);
-			for (i=0; i<arrSelect[0].length;i++){
+			for (i=0; i<arrSelect.length;i++){
 				var option = document.createElement("option");
-					option.value = arrSelect[0][i];
-					option.textContent = arrSelect[1][i];
+					option.value = arrSelect[i];
+					option.textContent = arrSelect[i];
 					dropDown.appendChild(option);
 			}
 	//---ENDE--------------------------------Genre-Selctor-creating------------------------------------------------
@@ -30,7 +42,7 @@ function movieBoxBuilder(strGenre){
 
 		var thisID = moviedata[i].movieID; //for later usage its important to have an unique id to hold the value of likes after sorting an refresh the site
 
-		if (strGenre == "all"){
+		if (strGenre == "Genre"){
 			mBoxElementBuilder(thisID,i);
 		}else if (moviedata[i].genre == strGenre){
 			mBoxElementBuilder(thisID,i);
@@ -132,27 +144,5 @@ function genreSort(){
 //--ENDE--------------------------Genre Event Function----------------------------
 
 
-//-------test-------------------------------------------
+//-------test-------------------------------------------	
 
-function selectOptionValues(){
-	var selectArr = ["all"];
-
-	for(var i=0; i < moviedata.length; i ++){
-		
-		var check = moviedata[i].genre;
-		
-		for(var j=0; j < selectArr.length; j ++){
-			console.log("schleife zwei, runde "+j);
-			console.log(selectArr[j]);
-			console.log("check: "+check);
-
-			if(selectArr[j]!=check){
-			selectArr.push(check);
-				
-			};
-		};
-
-	};
-	console.log(selectArr);
-
-}

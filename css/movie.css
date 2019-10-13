@@ -68,7 +68,7 @@ main{
 	justify-content: flex-end;
 	padding: 1vh 0;
 }
-
+#sorter{cursor: pointer;	}
 #sorter2{
 	background-color: #171E24;
 	color: grey;
