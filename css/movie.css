@@ -15,7 +15,7 @@ a:hover{
 }
 h2{
 	margin: 0;
-	margin-left: 44%;
+	margin-left: 40%;
 }
 header{
 	background-color: black;
@@ -25,7 +25,8 @@ header{
 }
 nav{
 	background-color: #414141;
-
+	display: flex;
+	justify-content: space-between;
 }
 nav ul {
 	margin: 0; }
@@ -68,11 +69,14 @@ main{
 	padding: 1vh 0;
 }
 
-#ropdown{
+#sorter2{
 	background-color: #171E24;
 	color: grey;
+	font-family: "PT Sans Narrow", verdana, sans-serif;
 	font-size: 2em;
 	border: none;
+	outline: none;
+	cursor: pointer;	
 }
 #movielist{
 	display: flex;
@@ -126,8 +130,8 @@ main{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 2em;
-	height: 2em;
+	width: 1.8em;
+	height: 1.8em;
 	background-color: #4da43c;
 	color: white;
 	border-radius: 50%;

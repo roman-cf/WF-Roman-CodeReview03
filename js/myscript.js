@@ -1,19 +1,33 @@
 //-----------------------------------at-the-beginning-----------------------------------------------------
 var moviedata = movieJson;
+var strGenre = "all";
 document.getElementById("sorter").addEventListener("click",firstSort,false);
-window.onload = movieBoxBuilder();
-
+document.getElementById("sorter2").addEventListener("change",genreSort,false);
+window.onload = movieBoxBuilder(strGenre);
+//---End of start----------------------------------------------------------------------------------------------
 
 // ---------------------------------MovieBox Builder------------------------------------------------------
-function movieBoxBuilder(){
+function movieBoxBuilder(strGenre){
 	const myNode = document.getElementById("movielist");
 	myNode.innerHTML = ''
+		 console.log("var: "+ strGenre);
 
 	for (var i=1; i < moviedata.length; i++){
 
 		var thisID = moviedata[i].movieID; //for later usage its important to have an unique id to hold the value of likes after sorting an refresh the site
 
-		let mBox = document.createElement("div");
+		if (strGenre == "all"){
+			mBoxElementBuilder(thisID,i);
+		}else if (moviedata[i].genre == strGenre){
+			mBoxElementBuilder(thisID,i);
+		}
+	} 
+}
+// ---------------------------------End of MovieBox Builder------------------------------------------------------
+
+//-------------------------------MovieBox Element Builder-------------------------
+function mBoxElementBuilder(thisID,i){
+			let mBox = document.createElement("div");
 			mBox.className = "moviebox";
 			mBox.id = "mBox"+ thisID;
 			document.getElementById("movielist").appendChild(mBox);
@@ -60,8 +74,8 @@ function movieBoxBuilder(){
 					likeO.textContent = moviedata[i].likes;
 					document.getElementById("lBox"+thisID).appendChild(likeO);
 
-	} 
-}// ---------------------------------End of MovieBox Builder------------------------------------------------------
+}
+//-------------------------------End of MovieBox Element Builder-------------------
 
 //-------------------------------Search-Function-for-Database-------------------
 function positionFinder(array, attr, value) {
@@ -91,6 +105,13 @@ function firstSort() {
 	moviedata.sort(function(a, b){
 		return a.likes-b.likes
 	});
-	movieBoxBuilder();
+	movieBoxBuilder(document.getElementById("sorter2").value);
 }
 //--ENDE------------------------------Sort Function-------------------------------
+
+//--------------------------------Genre Event Function----------------------------
+function genreSort(){
+	var strGenre = document.getElementById("sorter2").value;	
+	movieBoxBuilder(strGenre);
+}
+//--ENDE--------------------------Genre Event Function----------------------------
