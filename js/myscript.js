@@ -1,17 +1,31 @@
 //-----------------------------------at-the-beginning-----------------------------------------------------
 var moviedata = movieJson;
 var strGenre = "all";
+selectOptionValues();
+
+	//-------------------------------------Genre-Selctor-creating------------------------------------------------
+	var arrSelect = [["all","Abenteuer","Drama","Krimi"],["Genre","Abenteuer","Drama","Krimi"]];
+	let dropDown = document.createElement("select");
+		dropDown.id = "sorter2";
+		dropDown.addEventListener("change",genreSort,false);
+		document.getElementsByTagName("nav")[0].appendChild(dropDown);
+			for (i=0; i<arrSelect[0].length;i++){
+				var option = document.createElement("option");
+					option.value = arrSelect[0][i];
+					option.textContent = arrSelect[1][i];
+					dropDown.appendChild(option);
+			}
+	//---ENDE--------------------------------Genre-Selctor-creating------------------------------------------------
+
 document.getElementById("sorter").addEventListener("click",firstSort,false);
-document.getElementById("sorter2").addEventListener("change",genreSort,false);
 window.onload = movieBoxBuilder(strGenre);
-//---End of start----------------------------------------------------------------------------------------------
+//---End of beginning--------------------------------------------------------------------------------------
 
 // ---------------------------------MovieBox Builder------------------------------------------------------
 function movieBoxBuilder(strGenre){
 	const myNode = document.getElementById("movielist");
 	myNode.innerHTML = ''
-		 console.log("var: "+ strGenre);
-
+		 
 	for (var i=1; i < moviedata.length; i++){
 
 		var thisID = moviedata[i].movieID; //for later usage its important to have an unique id to hold the value of likes after sorting an refresh the site
@@ -78,9 +92,9 @@ function mBoxElementBuilder(thisID,i){
 //-------------------------------End of MovieBox Element Builder-------------------
 
 //-------------------------------Search-Function-for-Database-------------------
-function positionFinder(array, attr, value) {
-    for(var i = 0; i < array.length; i ++) {
-        if(array[i][attr] === value) {
+function positionFinder(obj, attr, value) {
+    for(var i = 0; i < obj.length; i ++) {
+        if(obj[i][attr] === value) {
             return i;
         }
     }
@@ -113,5 +127,32 @@ function firstSort() {
 function genreSort(){
 	var strGenre = document.getElementById("sorter2").value;	
 	movieBoxBuilder(strGenre);
+	//console.log(strGenre);
 }
 //--ENDE--------------------------Genre Event Function----------------------------
+
+
+//-------test-------------------------------------------
+
+function selectOptionValues(){
+	var selectArr = ["all"];
+
+	for(var i=0; i < moviedata.length; i ++){
+		
+		var check = moviedata[i].genre;
+		
+		for(var j=0; j < selectArr.length; j ++){
+			console.log("schleife zwei, runde "+j);
+			console.log(selectArr[j]);
+			console.log("check: "+check);
+
+			if(selectArr[j]!=check){
+			selectArr.push(check);
+				
+			};
+		};
+
+	};
+	console.log(selectArr);
+
+}
